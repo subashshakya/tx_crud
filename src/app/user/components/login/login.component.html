@@ -1,0 +1,179 @@
+<div class="forms-container">
+  <h3>{{ userMode ? "Login Form" : "Sign-Up Form" }}</h3>
+  <div class="credential-store">
+    @if (userMode) {
+    <form
+      class="form"
+      [formGroup]="loginForm"
+      (submit)="handleLoginFormSubmit()"
+    >
+      <div class="form__control">
+        <label class="form__control--label">Username</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="username"
+          placeholder="Username"
+          id="username"
+        />
+        @if (loginFormControl['username'].invalid &&
+        (loginFormControl['username'].dirty ||
+        loginFormControl['username'].touched)) { @if
+        (loginFormControl['username'].hasError('required')) {
+        <div class="invalid">Username is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Phone Number</label>
+        <p-inputMask
+          mask="9999-999-999"
+          formControlName="phoneNumber"
+          placeholder="9999-999-999"
+        />
+        @if (loginFormControl['phoneNumber'].invalid &&
+        (loginFormControl['phoneNumber'].dirty ||
+        loginFormControl['phoneNumber'].touched)) { @if
+        (loginFormControl['phoneNumber'].hasError('required')) {
+        <div class="invalid">Phone number is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Email</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="email"
+          placeholder="Email"
+        />
+        @if (loginFormControl['email'].invalid &&
+        (loginFormControl['email'].dirty || loginFormControl['email'].touched))
+        { @if (loginFormControl['email'].hasError('required')) {
+        <div class="invalid">Email is required</div>
+        }}
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Password</label>
+        <p-password
+          formControlName="password"
+          [toggleMask]="true"
+          placeholder="Password"
+        />
+        @if (loginFormControl['password'].invalid &&
+        (loginFormControl['password'].dirty ||
+        loginFormControl['password'].touched)) { @if
+        (loginFormControl['password'].hasError('required')) {
+        <div class="invalid">Password is required</div>
+        } @if (loginFormControl['password'].hasError('minlength')) {
+        <div class="invalid">Minimun length 8 is required</div>
+        } }
+      </div>
+      <button [disabled]="!loginForm.valid">Login</button>
+    </form>
+    } @else {
+    <form
+      class="form"
+      [formGroup]="signUpForm"
+      (submit)="handleLoginFormSubmit()"
+    >
+      <div class="form__control">
+        <label class="form__control--label">Username</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="username"
+          placeholder="Username"
+        />
+        @if (signupFormControl['username'].invalid &&
+        (signupFormControl['username'].dirty ||
+        signupFormControl['username'].touched)) { @if
+        (signupFormControl['username'].hasError('required')) {
+        <div class="invalid">Username is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Phone Number</label>
+        <p-inputMask
+          mask="9999-999-999"
+          formControlName="phoneNumber"
+          placeholder="9999-999-999"
+        />
+        @if (signupFormControl['phoneNumber'].invalid &&
+        (signupFormControl['phoneNumber'].dirty ||
+        signupFormControl['phoneNumber'].touched)) { @if
+        (signupFormControl['phoneNumber'].hasError('required')) {
+        <div class="invalid">Phone number is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Email</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="email"
+          placeholder="Email"
+        />
+        @if (signupFormControl['email'].invalid &&
+        (signupFormControl['email'].dirty ||
+        signupFormControl['email'].touched)) { @if
+        (signupFormControl['email'].hasError('required')) {
+        <div class="invalid">Email is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Password</label>
+        <p-password
+          formControlName="password"
+          [toggleMask]="true"
+          placeholder="Password"
+        />
+        @if (signupFormControl['password'].invalid &&
+        (signupFormControl['password'].dirty ||
+        signupFormControl['password'].touched)) { @if
+        (signupFormControl['password'].hasError('required')) {
+        <div class="invalid">Password is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">First Name</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="firstName"
+          placeholder="Fisrt Name"
+        />
+        @if (signupFormControl['firstName'].invalid &&
+        (signupFormControl['firstName'].dirty ||
+        signupFormControl['firstName'].touched)) { @if
+        (signupFormControl['firstName'].hasError('required')) {
+        <div class="invalid">First name is required</div>
+        } }
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Middle Name</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="middleName"
+          placeholder="Middle Name"
+        />
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Last Name</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="lastName"
+          placeholder="Last Name"
+        />
+        @if (signupFormControl['lastName'].invalid &&
+        (signupFormControl['lastName'].dirty ||
+        signupFormControl['lastName'].touched)) { @if
+        (signupFormControl['lastName'].hasError('required')) {
+        <div class="invalid">Last name is required</div>
+        } }
+      </div>
+      <button [disabled]="!signUpForm.valid">Sign Up</button>
+    </form>
+    }
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    &__control {
+      display: flex;
+      flex-direction: column;
+      margin: 0.25rem 0;
+
+      &--label {
+        margin-bottom: 0.1rem;
+      }
+    }
+
+    .invalid {
+      color: red;
+      font-size: 0.7rem;
+      padding-top: 0.3rem;
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      background-color: lightblue;
+      color: black;
+      margin-top: 1rem;
+
+      &:disabled {
+        background-color: lightgrey;
+        color: darkgrey;
+        cursor: not-allowed;
+        border: 0;
+      }
+    }
+  }
+}
