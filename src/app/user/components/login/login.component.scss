@@ -1,12 +1,25 @@
+@import "../../../../styles.scss";
+
 .forms-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  h3 {
+    font-size: 2rem;
+    background-color: var(--blue-200);
+    width: 40%;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
 
   .form {
     display: flex;
     flex-direction: column;
+    background-color: var(--blue-100);
+    padding: 2rem;
+    border-radius: 8px;
 
     &__control {
       display: flex;
@@ -31,12 +44,17 @@
       background-color: lightblue;
       color: black;
       margin-top: 1rem;
+      border: 0;
 
       &:disabled {
         background-color: lightgrey;
         color: darkgrey;
         cursor: not-allowed;
-        border: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 2px 1px 5px lightblue;
       }
     }
   }

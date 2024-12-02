@@ -32,9 +32,9 @@ export class UserFormsService {
         null,
         [
           Validators.required,
-          Validators.maxLength(10),
-          Validators.minLength(10),
-          Validators.pattern(/^\d{10}$/),
+          Validators.maxLength(12),
+          Validators.minLength(12),
+          Validators.pattern(/^\d{4}-\d{3}-\d{3}$/),
         ],
       ],
     });
@@ -63,9 +63,9 @@ export class UserFormsService {
         null,
         [
           Validators.required,
-          Validators.maxLength(10),
-          Validators.minLength(10),
-          Validators.pattern(/^\d{10}$/),
+          Validators.maxLength(12),
+          Validators.minLength(12),
+          Validators.pattern(/^\d{4}-\d{3}-\d{3}$/),
         ],
       ],
       firstName: [
